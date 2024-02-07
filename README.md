@@ -1,8 +1,6 @@
 # VideoStreaming_MultipleDevices
 
-In HOST MACHINE to run SERVER:
-
-Using Mediamtx for hosting a RTSP or RTMP server:
+# Using Mediamtx for hosting a RTSP or RTMP server:
 # Run this part only to set up server on Host machine
 
 1. Download mediamtx (ready to use media server) from Releases: https://github.com/bluenviron/mediamtx/releases 
@@ -17,7 +15,7 @@ In MacOS:
 
 _______________________________________________________________________________________
 
-To live stream and access videos:
+# To live stream and access videos:
 # This is run on the client side. Such as edge devices, drones, laptops, etc.
 
 In Windows:
@@ -42,20 +40,21 @@ In MacOS:
 
 _______________________________________________________________________________________
 
-Next steps:
+# Next steps:
 # This can be done from any device in the network
-
-In MacOS:
-1. Open vlc —>file —>open network—>copy address :rtsp://127.0.0.1:8554/camera1/pass1
 
 1. To run multiple streams, change as required eg: rtsp://<IP_ADDRESS>:8554/camera2/pass2 and so on.
 2. To access live video stream on VLC media player: Go to Media > Open Network Stream. Enter URL as rtsp://<IP_ADDRESS>:8554/camera1/pass1. Video should start playing after a few seconds.
 3. To save the video in mp4 format, run ffmpeg -i rtsp://<IP_ADDRESS>:8554/camera1/pass1 -c copy output1.mp4 on the host
 4. To save the stream in separate jpg images, create a folder and run ffmpeg -i rtsp://<IP_ADDRESS>:8554/camera1/pass1 -vf "fps=1" output_%03d.jpg
 
+In MacOS:
+1. Open vlc —>file —>open network—>copy address :rtsp://127.0.0.1:8554/camera1/pass1
+
 __________________________________________________________________________________________
 
-Live Streaming from DJI Drones:
+# Live Streaming from DJI Drones:
+
 1. Connect phone to RC. Open DJI app, such as DJI GO4. Check which app is compatible with the model of drone in https://www.dji.com/nl/downloads/djiapp. 
 2. Running mediamtx starts RTMP server in the host.
 3. In the DJI app, go to Options (usually top right button) > Live Streaming Option > RTMP. Enter RTMP address as rtmp://<IP_ADDRESS>/dji/pass
