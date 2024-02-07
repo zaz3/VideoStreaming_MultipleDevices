@@ -9,6 +9,12 @@ Using Mediamtx for hosting a RTSP or RTMP server:
 2. Extract mediamtx files
 3. Configuration settings can be modified in mediamtx.yaml file. Change the IP address to IP of the host device or localhost (Use ipconfig or ifconfig to find IP)
 
+In MacOS:
+
+1. Intall homebrew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+2. Inside homebrew install mediamtx brew install mediamtx
+3. Run mediamtx.yml /opt/homebrew/opt/mediamtx/bin/mediamtx /opt/homebrew/etc/mediamtx/mediamtx.yml
+
 _______________________________________________________________________________________
 
 To live stream and access videos:
@@ -30,10 +36,17 @@ In Linux:
 4. In a terminal, run ./mediamtx 
 5. In another terminal, run ffmpeg -f v4l2 -i /dev/video0 -preset ultrafast -b:v 2000k -f rtsp rtsp://<IP_ADDRESS>:8554/camera1/pass1
 
+In MacOS:
+1. Install ffmpeg brew install ffmpeg
+2. Run ffmpeg -f avfoundation -framerate 30 -video_size 1280x720 -pixel_format uyvy422 -i "default" -preset ultrafast -b:v 2000k -f rtsp rtsp://127.0.0.1:8554/camera1/pass1
+
 _______________________________________________________________________________________
 
 Next steps:
 # This can be done from any device in the network
+
+In MacOS:
+1. Open vlc —>file —>open network—>copy address :rtsp://127.0.0.1:8554/camera1/pass1
 
 1. To run multiple streams, change as required eg: rtsp://<IP_ADDRESS>:8554/camera2/pass2 and so on.
 2. To access live video stream on VLC media player: Go to Media > Open Network Stream. Enter URL as rtsp://<IP_ADDRESS>:8554/camera1/pass1. Video should start playing after a few seconds.
