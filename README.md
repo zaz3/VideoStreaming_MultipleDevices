@@ -1,7 +1,10 @@
 # VideoStreaming_MultipleDevices
+_________________________________________________________________________________________
 
-# Using Mediamtx for hosting a RTSP or RTMP server:
-# Run this part only to set up server on Host machine
+# TCP video streaming to RTSP server
+
+### Using Mediamtx for hosting a RTSP or RTMP server:
+Run this part only to set up server on Host machine
 
 1. Download mediamtx (ready to use media server) from Releases: https://github.com/bluenviron/mediamtx/releases 
 2. Extract mediamtx files
@@ -15,8 +18,8 @@ In MacOS:
 
 _______________________________________________________________________________________
 
-# To live stream and access videos:
-# This is run on the client side. Such as edge devices, drones, laptops, etc.
+### To live stream and access videos:
+This is run on the client side. Such as edge devices, drones, laptops, etc.
 
 In Windows:
 
@@ -40,8 +43,8 @@ In MacOS:
 
 _______________________________________________________________________________________
 
-# Next steps:
-# This can be done from any device in the network
+### Next steps:
+This can be done from any device in the network
 
 1. To run multiple streams, change as required eg: rtsp://<IP_ADDRESS>:8554/camera2/pass2 and so on.
 2. To access live video stream on VLC media player: Go to Media > Open Network Stream. Enter URL as rtsp://<IP_ADDRESS>:8554/camera1/pass1. Video should start playing after a few seconds.
@@ -53,7 +56,7 @@ In MacOS:
 
 __________________________________________________________________________________________
 
-# Live Streaming from DJI Drones:
+### Live Streaming from DJI Drones:
 
 1. Connect phone to RC. Open DJI app, such as DJI GO4. Check which app is compatible with the model of drone in https://www.dji.com/nl/downloads/djiapp. 
 2. Running mediamtx starts RTMP server in the host.
@@ -61,4 +64,11 @@ ________________________________________________________________________________
 4. When the drone starts streaming, the live stream icon appears on top left and turns blue to show time elapsed. Can click and see stream parameters like fps. 
 
 ________________________________________________________________________________________
+
+# Socket programming for transferring rosbag files and ros-topics
+This is to transfer rosbag files or rostopics from server to client. This can be used even if client does not have ROS installed.
+
+1. Run the rosbag_server.py or rostopics_server.py on the server side
+2. Run the rosbag_client.py or rostopics_client.py on the client side
+
 
